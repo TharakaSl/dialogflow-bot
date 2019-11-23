@@ -26,10 +26,31 @@ router.get('/getMovie', (req, res) => {
   axios.get('http://www.omdbapi.com/?t=joker&apikey=709c821b')
   .then(function (response) {
 	console.log(response);
-	res.json(response.data)
+  //res.json(response.data)
+  if(response.data) {
+    let result = response.data;
+    let output = "Average Rating : " + result.imdbRating + 
+    "\n Plot : " + result.Plot + "url" + result.Poster
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+            "speech" : output,
+            "displayText" : output
+        }));
+    } else {
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify({
+            "speech" : "Couldn't find any deatails. :(  ",
+            "displayText" : "Couldn't find any deatails. :(  "
+        }));
+    }
   })
   .catch(function (error) {
     console.log(error);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+                        "speech" : "Error. Can you try it again ? ",
+                        "displayText" : "Error. Can you try it again ? "
+                    }));
   });
 });
 
