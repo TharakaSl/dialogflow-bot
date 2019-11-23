@@ -23,7 +23,7 @@ getData(url);
 });
 
 router.post('/getMovie', (req, res) => {
-  if(req.body.queryResult.parameters['movie_name']){
+  if(req.body.queryResult.action == "input.getMovieInfo"){
     var movieName = req.body.queryResult.parameters['movie_name'];
   axios.get('http://www.omdbapi.com/?t='+movieName+'&apikey=709c821b')
   .then(function (response) {
@@ -51,6 +51,26 @@ router.post('/getMovie', (req, res) => {
       "fulfillmentText" : "Error. Can you try it again ? "
                     }));
   });
+}
+else if(req.body.queryResult.action == "input.getUserProfile"){
+  var profileUrl = `https://graph.facebook.com/v2.6/2029526947151086?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;   
+  axios.get(profileUrl)
+   .then(response => {
+     console.log(`hi ....` +response.data.first_name);
+     let output = `hi `+response.data.first_name;
+     res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+          "fulfillmentText" : output
+        }));
+
+   })
+   .catch(error => {
+    console.log(error);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText" : "Error. Can you try it again ? "
+                    }));
+   });
 }
 });
 
