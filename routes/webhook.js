@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 getData(url);  
 });
 
-router.get('/getMovie', (req, res) => {
+router.post('/getMovie', (req, res) => {
   if(req.body.queryResult.parameters['movie_name']){
     var movieName = req.body.queryResult.parameters['movie_name'];
   axios.get('http://www.omdbapi.com/?t='+movieName+'&apikey=709c821b')
