@@ -35,14 +35,12 @@ router.post('/getMovie', (req, res) => {
     "\n Plot : " + result.Plot + "url" + result.Poster
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-            "speech" : output,
-            "displayText" : output
+          "fulfillmentText" : output
         }));
     } else {
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify({
-            "speech" : "Couldn't find any deatails. :(  ",
-            "displayText" : "Couldn't find any deatails. :(  "
+        "fulfillmentText" : "Couldn't find any deatails. :(  "
         }));
     }
   })
@@ -50,8 +48,7 @@ router.post('/getMovie', (req, res) => {
     console.log(error);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-                        "speech" : "Error. Can you try it again ? ",
-                        "displayText" : "Error. Can you try it again ? "
+      "fulfillmentText" : "Error. Can you try it again ? "
                     }));
   });
 }
