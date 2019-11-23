@@ -23,8 +23,8 @@ getData(url);
 });
 
 router.get('/getMovie', (req, res) => {
-  if(req.body.result.parameters['movie_name']){
-    var movieName = req.body.result.parameters['movie_name'];
+  if(req.body.queryResult.parameters['movie_name']){
+    var movieName = req.body.queryResult.parameters['movie_name'];
   axios.get('http://www.omdbapi.com/?t='+movieName+'&apikey=709c821b')
   .then(function (response) {
 	console.log(response);
