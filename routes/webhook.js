@@ -23,7 +23,9 @@ getData(url);
 });
 
 router.get('/getMovie', (req, res) => {
-  axios.get('http://www.omdbapi.com/?t=joker&apikey=709c821b')
+  if(req.body.result.parameters['movie_name']){
+    var movieName = req.body.result.parameters['movie_name'];
+  axios.get('http://www.omdbapi.com/?t='+movieName+'&apikey=709c821b')
   .then(function (response) {
 	console.log(response);
   //res.json(response.data)
@@ -52,6 +54,7 @@ router.get('/getMovie', (req, res) => {
                         "displayText" : "Error. Can you try it again ? "
                     }));
   });
+}
 });
 
 module.exports = router;
