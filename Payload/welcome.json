@@ -1,7 +1,6 @@
 {
     "facebook": {
       "attachment": {
-        "text": "Hello, Facebook! ",
         "type":"template",
         "payload":{
           "template_type":"generic",
