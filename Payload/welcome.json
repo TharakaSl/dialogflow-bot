@@ -6,18 +6,18 @@
           "template_type":"generic",
           "elements":[
              {
-              "title":"Welcome!",
+              "title":"Health Information",
               "image_url":"https://petersfancybrownhats.com/company_image.png",
-              "subtitle":"We have the right hat for everyone.",
+              "subtitle":"Health Information",
               "default_action": {
                 "type": "web_url",
-                "url": "https://petersfancybrownhats.com/view?item=103",
+                "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
               },
               "buttons":[
                 {
                   "type":"web_url",
-                  "url":"https://petersfancybrownhats.com",
+                  "url":"https://onecommonhealth.com/",
                   "title":"View Website"
                 },{
                   "type":"postback",
@@ -27,18 +27,18 @@
               ]      
             },
             {
-              "title":"Welcome!",
+              "title":"Primary Health Care",
               "image_url":"https://petersfancybrownhats.com/company_image.png",
-              "subtitle":"We have the right hat for everyone.",
+              "subtitle":"Primary Health Care",
               "default_action": {
                 "type": "web_url",
-                "url": "https://petersfancybrownhats.com/view?item=103",
+                "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
               },
               "buttons":[
                 {
                   "type":"web_url",
-                  "url":"https://petersfancybrownhats.com",
+                  "url":"https://onecommonhealth.com/",
                   "title":"View Website"
                 },{
                   "type":"postback",
@@ -48,18 +48,18 @@
               ]      
             },
             {
-              "title":"Welcome!",
+              "title":"Health Financing",
               "image_url":"https://petersfancybrownhats.com/company_image.png",
-              "subtitle":"We have the right hat for everyone.",
+              "subtitle":"Health Financing",
               "default_action": {
                 "type": "web_url",
-                "url": "https://petersfancybrownhats.com/view?item=103",
+                "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
               },
               "buttons":[
                 {
                   "type":"web_url",
-                  "url":"https://petersfancybrownhats.com",
+                  "url":"https://onecommonhealth.com/",
                   "title":"View Website"
                 },{
                   "type":"postback",
@@ -69,18 +69,18 @@
               ]      
             },
             {
-              "title":"Welcome!",
+              "title":"Manage Membership",
               "image_url":"https://petersfancybrownhats.com/company_image.png",
-              "subtitle":"We have the right hat for everyone.",
+              "subtitle":"Manage Membership",
               "default_action": {
                 "type": "web_url",
-                "url": "https://petersfancybrownhats.com/view?item=103",
+                "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
               },
               "buttons":[
                 {
                   "type":"web_url",
-                  "url":"https://petersfancybrownhats.com",
+                  "url":"https://onecommonhealth.com/",
                   "title":"View Website"
                 },{
                   "type":"postback",
