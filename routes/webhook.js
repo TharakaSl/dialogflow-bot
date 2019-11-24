@@ -53,6 +53,9 @@ router.post('/getMovie', (req, res) => {
   });
 }
 else if(req.body.queryResult.action == "input.getUserProfile"){
+
+  var config = require('../Payload/welcome.json');
+
   var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
   var profileUrl = `https://graph.facebook.com/v2.6/`+profileId+`?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;   
   axios.get(profileUrl)
@@ -62,14 +65,8 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
      res.setHeader('Content-Type', 'application/json');
      res.send(JSON.stringify({
           "fulfillmentText" : output,
-          "payload": {
-            "facebook":
-             {
-                "text": "Hello, Facebook! "+output
-             }
-        }
+          "payload": config
         }));
-
    })
    .catch(error => {
     console.log(error);
