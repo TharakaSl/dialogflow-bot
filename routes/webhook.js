@@ -57,11 +57,17 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
   var profileUrl = `https://graph.facebook.com/v2.6/`+profileId+`?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;   
   axios.get(profileUrl)
    .then(response => {
-     console.log(`hi ....` +response.data.first_name);
+     console.log(`Hi ` +response.data.first_name);
      let output = `hi `+response.data.first_name;
      res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-          "fulfillmentText" : output
+     res.send(JSON.stringify({
+          "fulfillmentText" : output,
+          "payload": {
+            "facebook":
+             {
+                "text": "Hello, Facebook! "+output
+             }
+        }
         }));
 
    })
