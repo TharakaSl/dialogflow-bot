@@ -12,7 +12,7 @@
               "default_action": {
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
-                "webview_height_ratio": "tall"
+                "webview_height_ratio": "compact"
               },
               "buttons":[
                 {
@@ -33,7 +33,7 @@
               "default_action": {
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
-                "webview_height_ratio": "tall"
+                "webview_height_ratio": "compact"
               },
               "buttons":[
                 {
@@ -75,7 +75,7 @@
               "default_action": {
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
-                "webview_height_ratio": "tall"
+                "webview_height_ratio": "full"
               },
               "buttons":[
                 {
