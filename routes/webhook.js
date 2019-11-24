@@ -74,25 +74,8 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
               }
             },
             {
-              "payload": {
-              "facebook": {
-                  "attachment": {
-                      "type":"template",
-                      "payload":{
-                          "template_type":"button",
-                          "text":"Try the URL button!",
-                          "buttons":[
-                              {
-                                  "type":"web_url",
-                                  "url":"https://www.messenger.com/",
-                                  "title":"URL Button",
-                                  "webview_height_ratio": "tall"
-                              }
-                          ]
-                      }
-                  }
-              }}
-          }
+              "payload":  config
+            }         
           ]
         }));
    })
