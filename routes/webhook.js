@@ -61,10 +61,25 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
   axios.get(profileUrl)
    .then(response => {
      console.log(`Hi ` +response.data.first_name);
-     let output = `hi `+response.data.first_name;
+     let output = `Hi `+response.data.first_name;
      res.setHeader('Content-Type', 'application/json');
      res.send(JSON.stringify({
-          "fulfillmentText" : output
+          "fulfillmentText" : output,
+          "fulfillmentMessages": [
+            {
+              "card": {
+                "title": "card title",
+                "subtitle": "card text",
+                "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+                "buttons": [
+                  {
+                    "text": "button text",
+                    "postback": "https://assistant.google.com/"
+                  }
+                ]
+              }
+            }
+          ]
         }));
    })
    .catch(error => {
