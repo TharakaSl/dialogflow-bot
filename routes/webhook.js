@@ -66,19 +66,7 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
      res.send(JSON.stringify({
           "fulfillmentText" : output,
           "fulfillmentMessages": [
-            {
-              "card": {
-                "title": "card title",
-                "subtitle": "card text",
-                "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-                "buttons": [
-                  {
-                    "text": "button text",
-                    "postback": "https://assistant.google.com/"
-                  }
-                ]
-              }
-            }
+            config
           ]
         }));
    })
