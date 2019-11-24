@@ -61,7 +61,7 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
   axios.get(profileUrl)
    .then(response => {
      console.log(`Hi ` +response.data.first_name);
-     let output = `Hi `+response.data.first_name;
+     let output = `Hi `+response.data.first_name +` Hope your day is going well. Select your prefered option below: `;
      res.setHeader('Content-Type', 'application/json');
      res.send(JSON.stringify({
           "fulfillmentText" : "Hello",
