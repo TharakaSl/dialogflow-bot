@@ -64,8 +64,7 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
      let output = `hi `+response.data.first_name;
      res.setHeader('Content-Type', 'application/json');
      res.send(JSON.stringify({
-          "fulfillmentText" : output,
-          "payload": config
+          "fulfillmentText" : output
         }));
    })
    .catch(error => {
