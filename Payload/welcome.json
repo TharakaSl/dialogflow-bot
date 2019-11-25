@@ -16,8 +16,23 @@
               },
               "buttons":[{
                   "type":"postback",
-                  "title":"Start Chatting",
-                  "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                  "title":"See Options",
+                  "payload":{
+                    "template_type":"button",
+                    "text":"What do you want to do next?",
+                    "buttons":[
+                      {
+                        "type":"web_url",
+                        "url":"https://www.messenger.com",
+                        "title":"Visit Messenger"
+                      },
+                      {
+                        "type":"web_url",
+                        "url":"https://www.messenger.com",
+                        "title":"Visit Messenger"
+                      }
+                    ]
+                  }
                 }              
               ]      
             },
@@ -33,7 +48,7 @@
               "buttons":[
                 {
                   "type":"postback",
-                  "title":"Start Chatting",
+                  "title":"See Options",
                   "payload":"DEVELOPER_DEFINED_PAYLOAD"
                 }              
               ]      
@@ -50,7 +65,7 @@
               "buttons":[
                 {
                   "type":"postback",
-                  "title":"Start Chatting",
+                  "title":"See Options",
                   "payload":"DEVELOPER_DEFINED_PAYLOAD"
                 }              
               ]      
@@ -67,7 +82,7 @@
               "buttons":[
                 {
                   "type":"postback",
-                  "title":"Start Chatting",
+                  "title":"See Options",
                   "payload":"DEVELOPER_DEFINED_PAYLOAD"
                 }              
               ]      
