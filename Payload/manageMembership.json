@@ -3,23 +3,34 @@
         "attachment": {
             "type": "template",
             "payload": {
-                "template_type": "button",
-                "text": "Manage Membership",
-                "buttons": [
+                "template_type": "generic",
+                "elements": [
                     {
-                        "type": "postback",
-                        "title": "Manage My Family",
-                        "payload": "manageMyFamily"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Mange My Packages",
-                        "payload": "mangeMyPackages"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Get Member Support",
-                        "payload": "getMemberSupport"
+                        "title": "Manage Membership",
+                        "image_url": "https://3o15h033zmpwracwx2i00rqx-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/35-2014-02-27-healthcare.jpg",
+                        "subtitle": "Manage Membership",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://onecommonhealth.com/",
+                            "webview_height_ratio": "tall"
+                        },
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Manage My Family",
+                                "payload": "manageMyFamily"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Mange My Packages",
+                                "payload": "mangeMyPackages"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Get Member Support",
+                                "payload": "getMemberSupport"
+                            }
+                        ]
                     }
                 ]
             }
