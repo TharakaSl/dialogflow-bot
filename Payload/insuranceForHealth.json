@@ -6,9 +6,9 @@
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "Health Financing",
-                        "image_url": "https://www.bloemfonteincourant.co.za/wp-content/uploads/2019/09/shutterstock_588010928-1200x675.jpg",
-                        "subtitle": "Health Financing",
+                        "title": "Manage Membership",
+                        "image_url": "https://revcycleintelligence.com/images/site/features/hospital_chargemaster%2C_prices.jpg",
+                        "subtitle": "Manage Membership",
                         "default_action": {
                             "type": "web_url",
                             "url": "https://onecommonhealth.com/",
@@ -17,13 +17,18 @@
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Insurance For Health",
-                                "payload": "insuranceForHealth"
+                                "title": "Submit Pre-Claim",
+                                "payload": "submitPreClaim"
                             },
                             {
                                 "type": "postback",
-                                "title": "Loans For Health",
-                                "payload": "loansForHealth"
+                                "title": "Submit Claim",
+                                "payload": "submitClaim"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Check Claim Status",
+                                "payload": "checkClaimStatus"
                             }
                         ]
                     }
