@@ -86,7 +86,40 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
    });
 }
 
-function sendMenuMessage(sender) {
+
+var data = req.body;
+
+// Make sure this is a page subscription
+if (data.object === 'page') {
+    data.entry.forEach(function(entry) {
+    entry.messaging.forEach(function(event) {
+        if (event.message) {
+
+        //receivedMessage(event);
+
+        } else {
+
+        if(event.postback)
+        {
+            receivedPostback(event);
+        }      
+
+        }
+    });
+    });
+
+    // You should return a 200 status code to Facebook 
+    res.sendStatus(200);
+
+  }
+
+});
+
+function receivedPostback(event) {
+
+  var message = event.message;
+  var messageText = message.text;
+  if (messageText == "healthInformation") {
   let messageData = {
       "attachment": {
           "type": "template",
@@ -127,8 +160,8 @@ function sendMenuMessage(sender) {
       } else if (response.body.error) {
           console.log('Error: ', response.body.error)
       }
-  })};
-
-});
+  }
+)};
+}
 
 module.exports = router;
