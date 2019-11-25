@@ -111,6 +111,6 @@ function healtInformation(res) {
             }         
           ]
         }));
-)};
+};
 
 module.exports = router;
