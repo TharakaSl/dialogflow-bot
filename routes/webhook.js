@@ -86,30 +86,31 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
    });
 }
 else if(req.body.queryResult.action == "input.healthInformation"){
-  healtInformation();
+  healtInformation(res);
 }
 
 });
 
 
-function healtInformation() {
+function healtInformation(res) {
   var messageData = require('../Payload/healthInfo.json');
-  request({
-      url: 'https://graph.facebook.com/v2.6/me/messages',
-      qs: {
-          access_token: "EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD"
-      },
-      method: 'POST',
-      json: {
-          message: messageData,
-      }
-  }, function (error, response, body) {
-      if (error) {
-          console.log('Error sending messages: ', error)
-      } else if (response.body.error) {
-          console.log('Error: ', response.body.error)
-      }
-  }
+
+  res.setHeader('Content-Type', 'application/json');
+     res.send(JSON.stringify({
+          "fulfillmentText" : "Hello",
+          "fulfillmentMessages": [
+            {
+              "text": {
+                "text": [
+                  output
+                ]
+              }
+            },
+            {
+              "payload":  messageData
+            }         
+          ]
+        }));
 )};
 
 module.exports = router;
