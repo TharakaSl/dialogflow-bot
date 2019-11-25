@@ -85,13 +85,16 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
                     }));
    });
 }
-else if(req.body.queryResult.action == "healthInformation"){
-  sendSample();
+else if(req.body.queryResult.action == "input.healthInformation"){
+  res.send(JSON.stringify({
+    "fulfillmentText" : "Hello 123"
+  }));
 }
 
 });
 
-function sendSample() {
+
+function healtInformation() {
   let messageData = {
       "attachment": {
           "type": "template",
