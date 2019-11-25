@@ -92,6 +92,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
         {
+          "text": {
+            "text": [
+              "Here is the few option you can choose"
+            ]
+          }
+        },
+        {
           "payload": messageData
         }
       ]
@@ -116,6 +123,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
         {
+          "text": {
+            "text": [
+              "Here is the few option you can choose"
+            ]
+          }
+        },
+        {
           "payload": messageData
         }
       ]
@@ -127,6 +141,13 @@ router.post('/', (req, res) => {
     res.send(JSON.stringify({
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
+        {
+          "text": {
+            "text": [
+              "Here is the few option you can choose"
+            ]
+          }
+        },
         {
           "payload": messageData
         }
@@ -140,6 +161,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
         {
+          "text": {
+            "text": [
+              "Here is the few option you can choose"
+            ]
+          }
+        },
+        {
           "payload": messageData
         }
       ]
@@ -151,6 +179,13 @@ router.post('/', (req, res) => {
     res.send(JSON.stringify({
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
+        {
+          "text": {
+            "text": [
+              "Here is the few option you can choose"
+            ]
+          }
+        },
         {
           "payload": messageData
         }
