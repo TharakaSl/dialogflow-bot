@@ -10,9 +10,9 @@
               "image_url":"https://3o15h033zmpwracwx2i00rqx-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/35-2014-02-27-healthcare.jpg",
               "subtitle":"Health Information",
               "default_action": {
-                "type": "postback",
-                "title": "Start Chatting",
-                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                "type": "web_url",
+                "url": "https://onecommonhealth.com/",
+                "webview_height_ratio": "tall"
               }      
             },
             {
@@ -20,9 +20,9 @@
               "image_url":"https://northcentralhealthdistrict.org/wp-content/uploads/2017/07/Coalition-banner.jpg",
               "subtitle":"Primary Health Care",
               "default_action": {
-                "type": "postback",
-                "title": "Start Chatting",
-                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                "type": "web_url",
+                "url": "https://onecommonhealth.com/",
+                "webview_height_ratio": "tall"
               }     
             },
             {
@@ -30,9 +30,9 @@
               "image_url":"https://www.bloemfonteincourant.co.za/wp-content/uploads/2019/09/shutterstock_588010928-1200x675.jpg",
               "subtitle":"Health Financing",
               "default_action": {
-                "type": "postback",
-                "title": "Start Chatting",
-                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                "type": "web_url",
+                "url": "https://onecommonhealth.com/",
+                "webview_height_ratio": "tall"
               }     
             },
             {
@@ -40,9 +40,9 @@
               "image_url":"https://chiefexecutive.net/wp-content/uploads/2018/03/GettyImages-691715656.jpg",
               "subtitle":"Manage Membership",
               "default_action": {
-                "type": "postback",
-                "title": "Start Chatting",
-                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                "type": "web_url",
+                "url": "https://onecommonhealth.com/",
+                "webview_height_ratio": "tall"
               }     
             }
           ]
