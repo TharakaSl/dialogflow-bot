@@ -86,17 +86,9 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
    });
 }
 else if(req.body.queryResult.action == "input.healthInformation"){
-  healtInformation(res);
-}
-
-});
-
-
-function healtInformation(res) {
   var messageData = require('../Payload/healthInfo.json');
-
   res.setHeader('Content-Type', 'application/json');
-     res.send(JSON.stringify({
+  res.send(JSON.stringify({
           "fulfillmentText" : "Hello",
           "fulfillmentMessages": [
             {
@@ -111,6 +103,10 @@ function healtInformation(res) {
             }         
           ]
         }));
-};
+}
+
+});
+
+
 
 module.exports = router;
