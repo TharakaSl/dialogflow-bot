@@ -1,0 +1,28 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text": "Manage Membership",
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "Manage My Family",
+                        "payload": "manageMyFamily"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "Mange My Packages",
+                        "payload": "mangeMyPackages"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "Get Member Support",
+                        "payload": "getMemberSupport"
+                    }
+                ]
+            }
+        }
+    }
+}

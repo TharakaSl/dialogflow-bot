@@ -121,6 +121,18 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.manageMembership") {
+    var messageData = require('../Payload/manageMembership.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "payload": messageData
+        }
+      ]
+    }));
+  }
 });
 
 

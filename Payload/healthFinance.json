@@ -4,7 +4,7 @@
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text": "Health Information",
+                "text": "Health Financing",
                 "buttons": [
                     {
                         "type": "postback",
