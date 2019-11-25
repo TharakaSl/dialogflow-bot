@@ -86,18 +86,7 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
    });
 }
 
-let messaging_events = req.body.entry[0].messaging;
-for (let i = 0; i < messaging_events.length; i++) {
-  let event = req.body.entry[0].messaging[i]; 
-  let sender = event.sender.id
-    if (event.message && event.message.text) {
-        let text = event.message.text
-        if (text === 'healthInformation') {
-            sendMenuMessage(sender)
-            continue
-        } 
-    }
-}
+
 
 
 function sendMenuMessage(sender) {
@@ -141,7 +130,7 @@ function sendMenuMessage(sender) {
       } else if (response.body.error) {
           console.log('Error: ', response.body.error)
       }
-  })}
+  })};
 
 });
 
