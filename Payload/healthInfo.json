@@ -4,13 +4,18 @@
         "type":"template",
         "payload":{
     "template_type":"button",
-    "text":"What do you want to do next?",
+    "text":"Health Information",
     "buttons":[
-      {
-        "type":"web_url",
-        "url":"https://www.messenger.com",
-        "title":"Visit Messenger"
-      }
+        {
+            "type":"postback",
+            "title":"My Everyday Health",
+            "payload":"myEveryDayHealth"
+          },
+          {
+            "type":"postback",
+            "title":"HealthTopics",
+            "payload":"healthTopics"
+          }  
     ]
   }
 }
