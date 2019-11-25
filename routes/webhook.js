@@ -86,37 +86,14 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
    });
 }
 else if(req.body.queryResult.action == "input.healthInformation"){
-  res.send(JSON.stringify({
-    "fulfillmentText" : "Hello 123"
-  }));
+  healtInformation();
 }
 
 });
 
 
 function healtInformation() {
-  let messageData = {
-      "attachment": {
-          "type": "template",
-          "payload": {
-              "template_type": "generic",
-              "elements": [{
-                  "title": "Our Menu",
-                  "subtitle": "Click buttons to see more",
-                  "image_url": "img.jpg",
-                  "buttons": [{
-                      "type": "postback",
-                      "title": "Coffee",
-                      "payload": "coffee",
-                  }, {
-                      "type": "postback",
-                      "title": "Tea",
-                      "payload": "tea",
-                  }],
-              }]
-          }
-      }
-  }
+  var messageData = require('../Payload/healthInfo.json');
   request({
       url: 'https://graph.facebook.com/v2.6/me/messages',
       qs: {
@@ -124,9 +101,6 @@ function healtInformation() {
       },
       method: 'POST',
       json: {
-          recipient: {
-              id: sender
-          },
           message: messageData,
       }
   }, function (error, response, body) {
