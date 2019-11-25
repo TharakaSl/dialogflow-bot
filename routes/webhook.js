@@ -94,7 +94,7 @@ router.post('/', (req, res) => {
         {
           "text": {
             "text": [
-              "Here is the few option you can choose"
+              "Here is the few option you can choose."
             ]
           }
         },
@@ -111,6 +111,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Hello",
       "fulfillmentMessages": [
         {
+          "text": {
+            "text": [
+              "Here is the few option you can choose."
+            ]
+          }
+        },
+        {
           "payload": messageData
         }
       ]
@@ -125,7 +132,7 @@ router.post('/', (req, res) => {
         {
           "text": {
             "text": [
-              "Here is the few option you can choose"
+              "Here is the few option you can choose."
             ]
           }
         },
@@ -144,7 +151,7 @@ router.post('/', (req, res) => {
         {
           "text": {
             "text": [
-              "Here is the few option you can choose"
+              "Here is the few option you can choose."
             ]
           }
         },
@@ -163,7 +170,7 @@ router.post('/', (req, res) => {
         {
           "text": {
             "text": [
-              "Here is the few option you can choose"
+              "Here is the few option you can choose."
             ]
           }
         },
@@ -182,7 +189,7 @@ router.post('/', (req, res) => {
         {
           "text": {
             "text": [
-              "Here is the few option you can choose"
+              "Here is the few option you can choose."
             ]
           }
         },
