@@ -8,7 +8,7 @@
                     {
                         "title": "Primary Health Care",
                         "image_url": "https://northcentralhealthdistrict.org/wp-content/uploads/2017/07/Coalition-banner.jpg",
-                        "subtitle": "Health Information",
+                        "subtitle": "Here is the few option you can choose",
                         "default_action": {
                             "type": "web_url",
                             "url": "https://onecommonhealth.com/",
