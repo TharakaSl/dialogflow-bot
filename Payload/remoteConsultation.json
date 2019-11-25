@@ -1,0 +1,34 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Remote Consultation",
+                        "image_url": "https://northcentralhealthdistrict.org/wp-content/uploads/2017/07/Coalition-banner.jpg",
+                        "subtitle": "Remote Consultation",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://onecommonhealth.com/",
+                            "webview_height_ratio": "tall"
+                        },
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Remote Conultation",
+                                "payload": "remoteConultation"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Appointment Booking",
+                                "payload": "appointmentBooking"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
