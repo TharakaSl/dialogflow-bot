@@ -85,6 +85,64 @@ else if(req.body.queryResult.action == "input.getUserProfile"){
                     }));
    });
 }
+
+let messaging_events = req.body.entry[0].messaging;
+for (let i = 0; i < messaging_events.length; i++) {
+  let event = req.body.entry[0].messaging[i]; 
+  let sender = event.sender.id
+    if (event.message && event.message.text) {
+        let text = event.message.text
+        if (text === 'healthInformation') {
+            sendMenuMessage(sender)
+            continue
+        } 
+    }
+}
+
+
+function sendMenuMessage(sender) {
+  let messageData = {
+      "attachment": {
+          "type": "template",
+          "payload": {
+              "template_type": "generic",
+              "elements": [{
+                  "title": "Our Menu",
+                  "subtitle": "Click buttons to see more",
+                  "image_url": "img.jpg",
+                  "buttons": [{
+                      "type": "postback",
+                      "title": "Coffee",
+                      "payload": "coffee",
+                  }, {
+                      "type": "postback",
+                      "title": "Tea",
+                      "payload": "tea",
+                  }],
+              }]
+          }
+      }
+  }
+  request({
+      url: 'https://graph.facebook.com/v2.6/me/messages',
+      qs: {
+          access_token: "EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD"
+      },
+      method: 'POST',
+      json: {
+          recipient: {
+              id: sender
+          },
+          message: messageData,
+      }
+  }, function (error, response, body) {
+      if (error) {
+          console.log('Error sending messages: ', error)
+      } else if (response.body.error) {
+          console.log('Error: ', response.body.error)
+      }
+  })}
+
 });
 
 module.exports = router;
