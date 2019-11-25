@@ -109,6 +109,18 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.healthFinancing") {
+    var messageData = require('../Payload/healthFinance.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "payload": messageData
+        }
+      ]
+    }));
+  }
 });
 
 

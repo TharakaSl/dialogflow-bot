@@ -52,7 +52,7 @@
               {
                 "type": "postback",
                 "title": "See Options",
-                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                "payload": "healthFinancing"
               }
             ]
           },
