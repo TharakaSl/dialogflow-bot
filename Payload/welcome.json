@@ -13,7 +13,13 @@
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
-              }      
+              },
+              "buttons":[{
+                  "type":"postback",
+                  "title":"Start Chatting",
+                  "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                }              
+              ]      
             },
             {
               "title":"Primary Health Care",
@@ -23,7 +29,14 @@
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
-              }     
+              },
+              "buttons":[
+                {
+                  "type":"postback",
+                  "title":"Start Chatting",
+                  "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                }              
+              ]      
             },
             {
               "title":"Health Financing",
@@ -33,7 +46,14 @@
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
-              }     
+              },
+              "buttons":[
+                {
+                  "type":"postback",
+                  "title":"Start Chatting",
+                  "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                }              
+              ]      
             },
             {
               "title":"Manage Membership",
@@ -43,7 +63,14 @@
                 "type": "web_url",
                 "url": "https://onecommonhealth.com/",
                 "webview_height_ratio": "tall"
-              }     
+              },
+              "buttons":[
+                {
+                  "type":"postback",
+                  "title":"Start Chatting",
+                  "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                }              
+              ]      
             }
           ]
         }
