@@ -17,13 +17,13 @@
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Remote Conultation",
-                                "payload": "remoteConultation"
+                                "title": "Speak To Doctor Now",
+                                "payload": "speakToDoctorNow"
                             },
                             {
                                 "type": "postback",
-                                "title": "Appointment Booking",
-                                "payload": "appointmentBooking"
+                                "title": "Book Consult Later",
+                                "payload": "bookConsultLater"
                             }
                         ]
                     }

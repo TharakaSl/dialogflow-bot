@@ -17,8 +17,8 @@
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Remote Conultation",
-                                "payload": "remoteConultation"
+                                "title": "Remote Consultation",
+                                "payload": "remoteConsultation"
                             },
                             {
                                 "type": "postback",
