@@ -89,19 +89,7 @@ else if(req.body.queryResult.action == "input.healthInformation"){
   var messageData = require('../Payload/healthInfo.json');
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({
-    "fulfillmentText" : "Hello",
-    "fulfillmentMessages": [
-      {
-        "text": {
-          "text": [
-            output
-          ]
-        }
-      },
-      {
-        "payload":  messageData
-      }         
-    ]
+    "fulfillmentText" : "Hello"
   }));
 }
 });
