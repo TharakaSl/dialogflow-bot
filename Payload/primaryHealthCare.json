@@ -4,17 +4,17 @@
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text": "Health Information",
+                "text": "Primary Health Care",
                 "buttons": [
                     {
                         "type": "postback",
-                        "title": "My Everyday Health",
-                        "payload": "myEveryDayHealth"
+                        "title": "Remote Conultation",
+                        "payload": "remoteConultation"
                     },
                     {
                         "type": "postback",
-                        "title": "Health Topics",
-                        "payload": "healthTopics"
+                        "title": "Appointment Booking",
+                        "payload": "appointmentBooking"
                     }
                 ]
             }

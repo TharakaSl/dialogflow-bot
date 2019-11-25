@@ -97,6 +97,18 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.primaryHealthCare") {
+    var messageData = require('../Payload/primaryHealthCare.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "payload": messageData
+        }
+      ]
+    }));
+  }
 });
 
 
