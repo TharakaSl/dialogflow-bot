@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const axios = require("axios");
+var moment = require('moment');
 // Configuration
 const app = express();
 app.use(bodyparser.json());
@@ -54,7 +55,7 @@ router.post('/', (req, res) => {
   }
   else if (req.body.queryResult.action == "input.getUserProfile") {
     var config = require('../Payload/welcome.json');
-    var welComeMsg = renderWelcomeMsg();
+    var welComeMsg = renderWelcomeMsg(moment());
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
     var profileUrl = `https://graph.facebook.com/v2.6/` + profileId + `?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;
     axios.get(profileUrl)
@@ -167,20 +168,24 @@ router.post('/', (req, res) => {
   }
 });
 
-const renderWelcomeMsg = (currentTime = new Date()) => {
-  const currentHour = currentTime.getHours()
-  const splitAfternoon = 12; // 24hr time to split the afternoon
-  const splitEvening = 17; // 24hr time to split the evening
-
-  if (currentHour >= splitAfternoon && currentHour <= splitEvening) {
-    // Between 12 PM and 5PM
-    return 'Good afternoon';
-  } else if (currentHour >= splitEvening) {
-    // Between 5PM and Midnight
-    return 'Good evening';
-  }
-  // Between dawn and noon
-  return 'Good morning';
+const renderWelcomeMsg = (m) => {
+  var g = null; //return g
+	
+	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+	
+	var split_afternoon = 12 //24hr time to split the afternoon
+	var split_evening = 17 //24hr time to split the evening
+	var currentHour = parseFloat(m.format("HH"));
+	
+	if(currentHour >= split_afternoon && currentHour <= split_evening) {
+		g = "Good Afternoon";
+	} else if(currentHour >= split_evening) {
+		g = "Good Evening";
+	} else {
+		g = "Good Morning";
+	}
+	
+	return g;
 }
 
 
