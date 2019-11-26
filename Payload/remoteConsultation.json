@@ -8,7 +8,7 @@
                     {
                         "title": "Remote Consultation",
                         "image_url": "https://si.wsj.net/public/resources/images/PJ-BU769_INFORM_P_20140512162225.jpg",
-                        "subtitle": "Remote Consultation",
+                        "subtitle": "Here are the remote consultation options I can help you with",
                         "default_action": {
                             "type": "web_url",
                             "url": "https://onecommonhealth.com/",
