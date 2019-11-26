@@ -55,11 +55,12 @@ router.post('/', (req, res) => {
   else if (req.body.queryResult.action == "input.getUserProfile") {
     var config = require('../Payload/welcome.json');
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
+    var welComeMsg = renderWelcomeMsg();
     var profileUrl = `https://graph.facebook.com/v2.6/` + profileId + `?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;
     axios.get(profileUrl)
       .then(response => {
         console.log(`Hi ` + response.data.first_name);
-        let output = `Hi ` + response.data.first_name + `, Hope your day is going well. I can quickly help you with following items `;
+        let output = `Hi `+welComeMsg+' ' + response.data.first_name + `, Hope your day is going well. I can quickly help you with following items `;
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({
           "fulfillmentText": "Hello",
@@ -166,6 +167,21 @@ router.post('/', (req, res) => {
   }
 });
 
+const renderWelcomeMsg = (currentTime = new Date()) => {
+  const currentHour = currentTime.getHours()
+  const splitAfternoon = 12; // 24hr time to split the afternoon
+  const splitEvening = 17; // 24hr time to split the evening
+
+  if (currentHour >= splitAfternoon && currentHour <= splitEvening) {
+    // Between 12 PM and 5PM
+    return 'Good afternoon';
+  } else if (currentHour >= splitEvening) {
+    // Between 5PM and Midnight
+    return 'Good evening';
+  }
+  // Between dawn and noon
+  return 'Good morning';
+}
 
 
 module.exports = router;
