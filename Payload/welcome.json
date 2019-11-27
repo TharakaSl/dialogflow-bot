@@ -11,7 +11,7 @@
             "subtitle": "Health Information",
             "default_action": {
               "type": "web_url",
-              "url": "https://onecommonhealth.com/",
+              "url": "https://ch-ui.herokuapp.com/",
               "webview_height_ratio": "tall"
             },
             "buttons": [
@@ -28,7 +28,7 @@
             "subtitle": "Primary Health Care",
             "default_action": {
               "type": "web_url",
-              "url": "https://onecommonhealth.com/",
+              "url": "https://ch-ui.herokuapp.com/",
               "webview_height_ratio": "tall"
             },
             "buttons": [
@@ -45,7 +45,7 @@
             "subtitle": "Health Financing",
             "default_action": {
               "type": "web_url",
-              "url": "https://onecommonhealth.com/",
+              "url": "https://ch-ui.herokuapp.com/",
               "webview_height_ratio": "tall"
             },
             "buttons": [
@@ -62,7 +62,7 @@
             "subtitle": "Manage Membership",
             "default_action": {
               "type": "web_url",
-              "url": "https://onecommonhealth.com/",
+              "url": "https://ch-ui.herokuapp.com/",
               "webview_height_ratio": "tall"
             },
             "buttons": [
