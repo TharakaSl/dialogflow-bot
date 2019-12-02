@@ -61,23 +61,44 @@ router.post('/', (req, res) => {
     axios.get(profileUrl)
       .then(response => {
         console.log(`Hi ` + response.data.first_name);
-        let output = `Hi ` + welComeMsg + ' ' + response.data.first_name + `, Hope your day is going well. I can quickly help you with following items `;
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({
-          "fulfillmentText": "Hello",
-          "fulfillmentMessages": [
-            {
-              "text": {
-                "text": [
-                  output
-                ]
+        if (profileId != "2029526947151086") {
+          let output = `Hi ` + welComeMsg + ' ' + response.data.first_name + `, Hope your day is going well. I can quickly help you with following items `;
+          res.setHeader('Content-Type', 'application/json');
+          res.send(JSON.stringify({
+            "fulfillmentText": "Hello",
+            "fulfillmentMessages": [
+              {
+                "text": {
+                  "text": [
+                    output
+                  ]
+                }
+              },
+              {
+                "payload": config
               }
-            },
-            {
-              "payload": config
-            }
-          ]
-        }));
+            ]
+          }));
+        }
+        else {
+          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + 'You are not a register customer';
+          res.setHeader('Content-Type', 'application/json');
+          res.send(JSON.stringify({
+            "fulfillmentText": "Hello",
+            "fulfillmentMessages": [
+              {
+                "text": {
+                  "text": [
+                    output
+                  ]
+                }
+              },
+              {
+                "payload": config
+              }
+            ]
+          }));
+        }
       })
       .catch(error => {
         console.log(error);
@@ -153,7 +174,7 @@ router.post('/', (req, res) => {
         }
       ]
     }));
-  } 
+  }
   else if (req.body.queryResult.action == "input.insuranceForHealth") {
     var messageData = require('../Payload/insuranceForHealth.json');
     res.setHeader('Content-Type', 'application/json');
@@ -170,22 +191,22 @@ router.post('/', (req, res) => {
 
 const renderWelcomeMsg = (m) => {
   var g = null; //return g
-	
-	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
-	
-	var split_afternoon = 12 //24hr time to split the afternoon
-	var split_evening = 17 //24hr time to split the evening
-	var currentHour = parseFloat(m.format("HH"));
-	
-	if(currentHour >= split_afternoon && currentHour <= split_evening) {
-		g = "Good Afternoon";
-	} else if(currentHour >= split_evening) {
-		g = "Good Evening";
-	} else {
-		g = "Good Morning";
-	}
-	
-	return g;
+
+  if (!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+
+  var split_afternoon = 12 //24hr time to split the afternoon
+  var split_evening = 17 //24hr time to split the evening
+  var currentHour = parseFloat(m.format("HH"));
+
+  if (currentHour >= split_afternoon && currentHour <= split_evening) {
+    g = "Good Afternoon";
+  } else if (currentHour >= split_evening) {
+    g = "Good Evening";
+  } else {
+    g = "Good Morning";
+  }
+
+  return g;
 }
 
 
