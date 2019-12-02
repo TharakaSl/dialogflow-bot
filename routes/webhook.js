@@ -81,17 +81,15 @@ router.post('/', (req, res) => {
           }));
         }
         else {
-          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', You are not a registered customer';
+          var config = require('../Payload/yesNoOption.json');
+          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered customer yet. Would you like me to help you become a member?';
           res.setHeader('Content-Type', 'application/json');
+          config.facebook.attachment.payload.text = output;
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
             "fulfillmentMessages": [
               {
-                "text": {
-                  "text": [
-                    output
-                  ]
-                }
+                "payload": config
               }
             ]
           }));

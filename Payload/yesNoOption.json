@@ -1,0 +1,23 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text": "",
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "Yes",
+                        "payload": "want_to_register"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "No",
+                        "payload": "no_want_to_register"
+                    }
+                ]
+            }
+        }
+    }
+}
