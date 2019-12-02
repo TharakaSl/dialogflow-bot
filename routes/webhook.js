@@ -188,7 +188,7 @@ router.post('/', (req, res) => {
     axios.get(profileUrl)
       .then(response => {
         console.log(`Hi ` + response.data.first_name);
-          let output = `Name ` + response.data.first_name + <br/> +response.data.last_name;
+          let output = `Name ` ;
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
