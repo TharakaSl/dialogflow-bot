@@ -14,7 +14,7 @@
                     {
                         "type": "postback",
                         "title": "No",
-                        "payload": "no_want_to_register"
+                        "payload": "not_want_to_register"
                     }
                 ]
             }
