@@ -8,7 +8,7 @@
                     {
                         "title": "Profile Information",
                         "image_url": "",
-                        "subtitle": "Here are the health information options I can help you with",
+                        "subtitle": "",
                         "default_action": {
                             "type": "web_url",
                             "url": "https://onecommonhealth.com/",
