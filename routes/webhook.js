@@ -81,7 +81,7 @@ router.post('/', (req, res) => {
           }));
         }
         else {
-          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + 'You are not a register customer';
+          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', You are not a register customer';
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
@@ -92,9 +92,6 @@ router.post('/', (req, res) => {
                     output
                   ]
                 }
-              },
-              {
-                "payload": config
               }
             ]
           }));
