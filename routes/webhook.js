@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
         }
         else {
           var config = require('../Payload/yesNoOption.json');
-          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered customer yet. Would you like me to help you become a member?';
+          var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered member yet. Would you like me to help you become a member?';
           res.setHeader('Content-Type', 'application/json');
           config.facebook.attachment.payload.text = output;
           res.send(JSON.stringify({
@@ -180,6 +180,12 @@ router.post('/', (req, res) => {
           "payload": messageData
         }
       ]
+    }));
+  }
+  else if (req.body.queryResult.action == "input.RegisterStep1") {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello from register"
     }));
   }
 });
