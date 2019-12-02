@@ -188,7 +188,7 @@ router.post('/', (req, res) => {
     axios.get(profileUrl)
       .then(response => {
         console.log(`Hi ` + response.data.first_name);
-          let output = `Name ` ;
+          let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.` ;
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
