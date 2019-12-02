@@ -1,0 +1,34 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Profile Information",
+                        "image_url": "",
+                        "subtitle": "Here are the health information options I can help you with",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://onecommonhealth.com/",
+                            "webview_height_ratio": "tall"
+                        },
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Confirm",
+                                "payload": "profinfo_confirm"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Edit",
+                                "payload": "editprofinfo_confirm"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

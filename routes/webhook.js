@@ -187,7 +187,7 @@ router.post('/', (req, res) => {
     var profileUrl = `https://graph.facebook.com/v2.6/` + profileId + `?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;
     axios.get(profileUrl)
       .then(response => {
-        console.log(`Hi ` + response.data.first_name);
+        var config = require('../Payload/profileInfo.json');
           let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.` ;
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
@@ -199,6 +199,9 @@ router.post('/', (req, res) => {
                     output
                   ]
                 }
+              },
+              {
+                "payload": config
               }
             ]
           }));
