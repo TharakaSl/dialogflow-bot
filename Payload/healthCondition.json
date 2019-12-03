@@ -1,0 +1,34 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Health Condition",
+                        "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/finacial_gtbblr.jpg",
+                        "subtitle": "Here are the health financing options I can help you with",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://onecommonhealth.com/",
+                            "webview_height_ratio": "tall"
+                        },
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Insurance For Health",
+                                "payload": "insuranceForHealth"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Loans For Health",
+                                "payload": "loansForHealth"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

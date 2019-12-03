@@ -221,6 +221,18 @@ router.post('/', (req, res) => {
         }));
       });
   }
+  else if (req.body.queryResult.action == "input.healthCondition") {
+    var messageData = require('../Payload/healthCondition.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "payload": messageData
+        }
+      ]
+    }));
+  }
 });
 
 const renderWelcomeMsg = (m) => {
