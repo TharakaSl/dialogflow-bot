@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
     axios.get(profileUrl)
       .then(response => {
         console.log(`Hi ` + response.data.first_name);
-        if (profileId != "2029526947151086") {
+        if (profileId == "2029526947151086") {
           let output = `Hi ` + welComeMsg + ' ' + response.data.first_name + `, Hope your day is going well. I can quickly help you with following items `;
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
