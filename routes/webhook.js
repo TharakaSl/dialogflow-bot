@@ -198,6 +198,27 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.checkDigit") {
+
+    var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
+
+    var messageData = require('../Payload/healthCondition.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": phoneNum
+    }));
+
+    // var messageData = require('../Payload/healthCondition.json');
+    // res.setHeader('Content-Type', 'application/json');
+    // res.send(JSON.stringify({
+    //   "fulfillmentText": "Hello",
+    //   "fulfillmentMessages": [
+    //     {
+    //       "payload": messageData
+    //     }
+    //   ]
+    // }));
+  }
   else if (req.body.queryResult.action == "input.RegisterStep1") {
 
     var phoneNum = req.body.queryResult.parameters['phone-number'];
@@ -248,27 +269,6 @@ router.post('/', (req, res) => {
         }
       ]
     }));
-  }
-  else if (req.body.queryResult.action == "input.checkDigit") {
-
-    var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
-
-    var messageData = require('../Payload/healthCondition.json');
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-      "fulfillmentText": phoneNum
-    }));
-
-    // var messageData = require('../Payload/healthCondition.json');
-    // res.setHeader('Content-Type', 'application/json');
-    // res.send(JSON.stringify({
-    //   "fulfillmentText": "Hello",
-    //   "fulfillmentMessages": [
-    //     {
-    //       "payload": messageData
-    //     }
-    //   ]
-    // }));
   }
 });
 
