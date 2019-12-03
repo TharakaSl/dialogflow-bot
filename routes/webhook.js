@@ -198,7 +198,7 @@ router.post('/', (req, res) => {
       ]
     }));
   }
-  else if (req.body.queryResult.action == "input.checkDigit") {
+  else if (req.body.queryResult.action == "input.getSixteenDigitNumber") {
 
     var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
 
