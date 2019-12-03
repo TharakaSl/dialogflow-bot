@@ -81,15 +81,25 @@ router.post('/', (req, res) => {
           }));
         }
         else {
-          var config = require('../Payload/yesNoOption.json');
+          var fullTemplate = require('../Payload/activateFull.json');
+          var scratchCard = require('../Payload/scratchCard.json');
+          var buyNow = require('../Payload/buyNow.json');
+          var findRetailer = require('../Payload/findRetailer.json');
+          var learnMore = require('../Payload/learnMore.json');
+
+          fullTemplate.facebook.attachment.payload.elements[0] = scratchCard;
+          fullTemplate.facebook.attachment.payload.elements[1] = buyNow;
+          fullTemplate.facebook.attachment.payload.elements[2] = findRetailer;
+          fullTemplate.facebook.attachment.payload.elements[3] = learnMore;
+
           var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered member yet. Would you like me to help you become a member?';
           res.setHeader('Content-Type', 'application/json');
-          config.facebook.attachment.payload.text = output;
+          fullTemplate.facebook.attachment.payload.text = output;
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
             "fulfillmentMessages": [
               {
-                "payload": config
+                "payload": fullTemplate
               }
             ]
           }));

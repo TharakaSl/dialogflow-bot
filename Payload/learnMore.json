@@ -1,0 +1,11 @@
+{
+    "title": "Learn more",
+    "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Learn more",
+        "payload": "learn_more"
+      }
+    ]
+  }

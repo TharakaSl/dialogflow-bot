@@ -1,0 +1,11 @@
+{
+    "title": "Buy now",
+    "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Buy now",
+        "payload": "check_buy_now"
+      }
+    ]
+  }
