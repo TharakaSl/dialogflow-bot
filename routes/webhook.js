@@ -210,14 +210,18 @@ router.post('/', (req, res) => {
       }));
     }
     else {
-
-      var messageData = require('../Payload/healthCondition.json');
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify({
-        "fulfillmentText": "Great! The scratch card number is valid. I also see that you do not have a profile created yet. Let' start with your mobile number please"
+        "fulfillmentText": "Great! The scratch card number is valid. I also see that you do not have a profile created yet. Let' start with your mobile number please."
       }));
-
     }
+  }
+  else if(req.body.queryResult.action == "input.getPhoneNumber"){
+    var messageData = require('../Payload/healthCondition.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Great! T"
+    }));
   }
   else if (req.body.queryResult.action == "input.RegisterStep1") {
 
