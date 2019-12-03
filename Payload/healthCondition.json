@@ -15,7 +15,7 @@
                         }
                     },
                     {
-                        "title": "diabetes",
+                        "title": "Diabetes",
                         "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/finacial_gtbblr.jpg",
                         "default_action": {
                             "type": "web_url",
@@ -33,7 +33,7 @@
                         }
                     },
                     {
-                        "title": "pregnancy",
+                        "title": "Pregnancy",
                         "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/finacial_gtbblr.jpg",
                         "default_action": {
                             "type": "web_url",
