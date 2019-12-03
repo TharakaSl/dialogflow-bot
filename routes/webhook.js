@@ -205,7 +205,7 @@ router.post('/', (req, res) => {
     var messageData = require('../Payload/healthCondition.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": phoneNum
+      "fulfillmentText": "hellooooooo"
     }));
 
     // var messageData = require('../Payload/healthCondition.json');
