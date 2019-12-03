@@ -87,7 +87,7 @@ router.post('/', (req, res) => {
           var findRetailer = require('../Payload/findRetailer.json');
           var learnMore = require('../Payload/learnMore.json');
 
-          fullTemplate.facebook.attachment.payload.elements.push(scratchCard) ;
+          fullTemplate.facebook.attachment.payload.elements.push(scratchCard);
           fullTemplate.facebook.attachment.payload.elements.push(buyNow);
           fullTemplate.facebook.attachment.payload.elements.push(findRetailer);
           fullTemplate.facebook.attachment.payload.elements.push(learnMore);
@@ -200,15 +200,60 @@ router.post('/', (req, res) => {
   }
   else if (req.body.queryResult.action == "input.getSixteenDigitNumber") {
 
-    var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
+    var phoneNum = req.body.queryResult.parameters['digitnumber'];
+
+    if (! /^[0-9]{16}$/.test(phoneNum)) {
+      var messageData = require('../Payload/healthCondition.json');
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify({
+        "fulfillmentText": "Please enter valid sixteen digit number"
+      }));
+    }
+    else {
+
+      var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
+    var profileUrl = `https://graph.facebook.com/v2.6/` + profileId + `?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAKQWoK91BcBANCZC6ZCOedAmfk4yyNZAlTgtsjnUx1tSpG9TnjZAcPplR44Ki8Y82VxKagul6F1ZBxsDLyncTgO3iYWTtN1wHSXMBNphwSZCPA71kny9GMSc95iEfYZAv7GcTysDUNcs6O0qA4okX6pqDiFTA8LAi5jJicM0ZBpZCv0ZCGPV9o7pvrIWj5pQPIbkZD`;
+    axios.get(profileUrl)
+      .then(response => {
+        var config = require('../Payload/profileInfo.json');
+        config.facebook.attachment.payload.elements[0].image_url = response.data.profile_pic;
+        config.facebook.attachment.payload.elements[0].subtitle = 'Name: ' + response.data.first_name + ' ' + response.data.last_name
+          + '\n' + 'Gender: ' + response.data.gender;
+        let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.`;
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({
+          "fulfillmentText": "Hello",
+          "fulfillmentMessages": [
+            {
+              "text": {
+                "text": [
+                  output
+                ]
+              }
+            },
+            {
+              "payload": config
+            }
+          ]
+        }));
+      })
+      .catch(error => {
+        console.log(error);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({
+          "fulfillmentText": "Error. Can you try it again ? "
+        }));
+      });
+
+    }
 
     // var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
 
-    var messageData = require('../Payload/healthCondition.json');
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-      "fulfillmentText": "hrl"
-    }));
+    // var messageData = require('../Payload/healthCondition.json');
+    // res.setHeader('Content-Type', 'application/json');
+    // res.send(JSON.stringify({
+    //   "fulfillmentText": "hrl"
+    // }));
 
     // var messageData = require('../Payload/healthCondition.json');
     // res.setHeader('Content-Type', 'application/json');
@@ -231,26 +276,26 @@ router.post('/', (req, res) => {
       .then(response => {
         var config = require('../Payload/profileInfo.json');
         config.facebook.attachment.payload.elements[0].image_url = response.data.profile_pic;
-        config.facebook.attachment.payload.elements[0].subtitle = 'Name: '+ response.data.first_name + ' '+response.data.last_name 
-                                                                   + '\n' +'Gender: '+response.data.gender
-                                                                   + '\n' +'Phone Number: '+phoneNum;
-          let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.` ;
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify({
-            "fulfillmentText": "Hello",
-            "fulfillmentMessages": [
-              {
-                "text": {
-                  "text": [
-                    output
-                  ]
-                }
-              },
-              {
-                "payload": config
+        config.facebook.attachment.payload.elements[0].subtitle = 'Name: ' + response.data.first_name + ' ' + response.data.last_name
+          + '\n' + 'Gender: ' + response.data.gender
+          + '\n' + 'Phone Number: ' + phoneNum;
+        let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.`;
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({
+          "fulfillmentText": "Hello",
+          "fulfillmentMessages": [
+            {
+              "text": {
+                "text": [
+                  output
+                ]
               }
-            ]
-          }));
+            },
+            {
+              "payload": config
+            }
+          ]
+        }));
       })
       .catch(error => {
         console.log(error);
