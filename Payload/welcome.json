@@ -12,7 +12,7 @@
               {
                 "type": "postback",
                 "title": "Health Conditions",
-                "payload": "health_information"
+                "payload": "health_condition"
               },
               {
                 "type": "postback",
