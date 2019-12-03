@@ -6,7 +6,7 @@
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "Health Information",
+                        "title": "Live Healthy",
                         "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
                         "subtitle": "Here are the health information options I can help you with",
                         "default_action": {

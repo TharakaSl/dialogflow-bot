@@ -6,50 +6,86 @@
         "template_type": "generic",
         "elements": [
           {
-            "title": "Health Information",
+            "title": "Live Healthy",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
-            "subtitle": "Health Information",
             "buttons": [
               {
                 "type": "postback",
-                "title": "See Options",
-                "payload": "healthInformation"
+                "title": "Health Conditions",
+                "payload": "health_information"
+              },
+              {
+                "type": "postback",
+                "title": "Eat Well",
+                "payload": "eat_well"
+              },
+              {
+                "type": "postback",
+                "title": "Get Active",
+                "payload": "get_active"
               }
             ]
           },
           {
-            "title": "Primary Health Care",
+            "title": "Reach a Doctor",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
-            "subtitle": "Primary Health Care",
             "buttons": [
               {
                 "type": "postback",
-                "title": "See Options",
-                "payload": "primaryHealthCare"
+                "title": "Talk to a doctor now",
+                "payload": "talk_to_doctor"
+              },
+              {
+                "type": "postback",
+                "title": "Schedule a callback",
+                "payload": "schedule_cal_back"
+              },
+              {
+                "type": "postback",
+                "title": "Specialist appointment",
+                "payload": "specialist_appointment"
               }
             ]
           },
           {
-            "title": "Health Financing",
+            "title": "Pay for health",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/finacial_gtbblr.jpg",
-            "subtitle": "Health Financing",
             "buttons": [
               {
                 "type": "postback",
-                "title": "See Options",
-                "payload": "healthFinancing"
+                "title": "Pre Claim",
+                "payload": "pre_claim"
+              },
+              {
+                "type": "postback",
+                "title": "Claim Insurance",
+                "payload": "claim_insurance"
+              },
+              {
+                "type": "postback",
+                "title": "Check Status",
+                "payload": "check_status"
               }
             ]
           },
           {
             "title": "Manage Membership",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/member_dgjyqm.jpg",
-            "subtitle": "Manage Membership",
             "buttons": [
               {
                 "type": "postback",
-                "title": "See Options",
-                "payload": "manageMembership"
+                "title": "My Family",
+                "payload": "my_family"
+              },
+              {
+                "type": "postback",
+                "title": "My Profile",
+                "payload": "my_profile"
+              },
+              {
+                "type": "postback",
+                "title": "Get Help",
+                "payload": "get_help"
               }
             ]
           }
