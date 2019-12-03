@@ -202,6 +202,8 @@ router.post('/', (req, res) => {
 
     var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
 
+    // var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
+
     var messageData = require('../Payload/healthCondition.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
