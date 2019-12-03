@@ -9,11 +9,6 @@
             "title": "Health Information",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
             "subtitle": "Health Information",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://ch-ui.herokuapp.com/",
-              "webview_height_ratio": "tall"
-            },
             "buttons": [
               {
                 "type": "postback",
@@ -26,11 +21,6 @@
             "title": "Primary Health Care",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
             "subtitle": "Primary Health Care",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://ch-ui.herokuapp.com/",
-              "webview_height_ratio": "tall"
-            },
             "buttons": [
               {
                 "type": "postback",
@@ -43,11 +33,6 @@
             "title": "Health Financing",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/finacial_gtbblr.jpg",
             "subtitle": "Health Financing",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://ch-ui.herokuapp.com/",
-              "webview_height_ratio": "tall"
-            },
             "buttons": [
               {
                 "type": "postback",
@@ -60,11 +45,6 @@
             "title": "Manage Membership",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/member_dgjyqm.jpg",
             "subtitle": "Manage Membership",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://ch-ui.herokuapp.com/",
-              "webview_height_ratio": "tall"
-            },
             "buttons": [
               {
                 "type": "postback",
