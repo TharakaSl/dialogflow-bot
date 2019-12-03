@@ -93,8 +93,8 @@ router.post('/', (req, res) => {
           fullTemplate.facebook.attachment.payload.elements.push(learnMore);
 
           var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered member yet. Would you like me to help you become a member?';
-          res.setHeader('Content-Type', 'application/json');
           fullTemplate.facebook.attachment.payload.text = output;
+          res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({
             "fulfillmentText": "Hello",
             "fulfillmentMessages": [
