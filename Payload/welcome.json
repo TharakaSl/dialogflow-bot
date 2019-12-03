@@ -6,7 +6,7 @@
         "template_type": "generic",
         "elements": [
           {
-            "title": "Live Healthy",
+            "title": "Live healthy",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
             "buttons": [
               {
@@ -27,7 +27,7 @@
             ]
           },
           {
-            "title": "Reach a Doctor",
+            "title": "Reach a doctor",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
             "buttons": [
               {
@@ -69,7 +69,7 @@
             ]
           },
           {
-            "title": "Manage Membership",
+            "title": "Manage membership",
             "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/member_dgjyqm.jpg",
             "buttons": [
               {
