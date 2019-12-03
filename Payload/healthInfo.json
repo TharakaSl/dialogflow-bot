@@ -7,7 +7,7 @@
                 "elements": [
                     {
                         "title": "Health Information",
-                        "image_url": "https://3o15h033zmpwracwx2i00rqx-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/35-2014-02-27-healthcare.jpg",
+                        "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
                         "subtitle": "Here are the health information options I can help you with",
                         "default_action": {
                             "type": "web_url",

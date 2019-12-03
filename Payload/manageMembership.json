@@ -7,7 +7,7 @@
                 "elements": [
                     {
                         "title": "Manage Membership",
-                        "image_url": "https://chiefexecutive.net/wp-content/uploads/2018/03/GettyImages-691715656.jpg",
+                        "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/member_dgjyqm.jpg",
                         "subtitle": "Here are the manage membership options I can help you with",
                         "default_action": {
                             "type": "web_url",

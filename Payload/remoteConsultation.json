@@ -7,7 +7,7 @@
                 "elements": [
                     {
                         "title": "Remote Consultation",
-                        "image_url": "https://si.wsj.net/public/resources/images/PJ-BU769_INFORM_P_20140512162225.jpg",
+                        "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
                         "subtitle": "Here are the remote consultation options I can help you with",
                         "default_action": {
                             "type": "web_url",

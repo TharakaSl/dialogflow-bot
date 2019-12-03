@@ -7,7 +7,7 @@
                 "elements": [
                     {
                         "title": "Primary Health Care",
-                        "image_url": "https://northcentralhealthdistrict.org/wp-content/uploads/2017/07/Coalition-banner.jpg",
+                        "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
                         "subtitle": "Here are the primary health care options I can help you with",
                         "default_action": {
                             "type": "web_url",
