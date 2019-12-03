@@ -87,10 +87,10 @@ router.post('/', (req, res) => {
           var findRetailer = require('../Payload/findRetailer.json');
           var learnMore = require('../Payload/learnMore.json');
 
-          fullTemplate.facebook.attachment.payload.elements[0] = scratchCard;
-          fullTemplate.facebook.attachment.payload.elements[1] = buyNow;
-          fullTemplate.facebook.attachment.payload.elements[2] = findRetailer;
-          fullTemplate.facebook.attachment.payload.elements[3] = learnMore;
+          fullTemplate.facebook.attachment.payload.elements.push(scratchCard) ;
+          fullTemplate.facebook.attachment.payload.elements.push(buyNow);
+          fullTemplate.facebook.attachment.payload.elements.push(findRetailer);
+          fullTemplate.facebook.attachment.payload.elements.push(learnMore);
 
           var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered member yet. Would you like me to help you become a member?';
           res.setHeader('Content-Type', 'application/json');
