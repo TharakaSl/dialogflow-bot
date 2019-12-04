@@ -102,13 +102,6 @@ router.post('/', (req, res) => {
             "fulfillmentText": "Hello",
             "fulfillmentMessages": [
               {
-                "text": {
-                  "text": [
-                    output
-                  ]
-                }
-              },
-              {
                 "payload": fullTemplate
               }
             ]
