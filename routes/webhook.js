@@ -214,12 +214,10 @@ router.post('/', (req, res) => {
       }));
     }
     else {
-      const response = {
-        followupEventInput: {
-            name: "call_from_webhook"
-        }
-      }
-      res.send(response);
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify({
+        "fulfillmentText": "Great! The scratch card number is valid. I also see that you do not have a profile created yet. Let' start with your mobile number please."
+      }));
     }
   }
   else if(req.body.queryResult.action == "input.getPhoneNumber"){
