@@ -215,7 +215,7 @@ router.post('/', (req, res) => {
     }
     else {
       const response = {
-        followupEvent: {
+        followupEventInput: {
             name: "call_from_webhook"
         }
       }
