@@ -2,10 +2,14 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const axios = require("axios");
 var moment = require('moment');
+
 // Configuration
-const app = express();
-app.use(bodyparser.json());
+const expressApp  = express();
+expressApp.use(bodyparser.json());
 var router = express.Router();
+const { dialogflow } = require('actions-on-google')
+
+const app = dialogflow();
 
 // Webhook route
 // router.post('/', (req, res) => {  
@@ -210,10 +214,10 @@ router.post('/', (req, res) => {
       }));
     }
     else {
-      res.setHeader('Content-Type', 'application/json');
-      res.send(JSON.stringify({
-        "fulfillmentText": "Great! The scratch card number is valid. I also see that you do not have a profile created yet. Let' start with your mobile number please."
-      }));
+      
+
+      app.intent('Welcome', AskPhoneNumber)
+
     }
   }
   else if(req.body.queryResult.action == "input.getPhoneNumber"){
