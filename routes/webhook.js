@@ -224,7 +224,7 @@ router.post('/', (req, res) => {
     var messageData = require('../Payload/healthCondition.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "Great! T"
+      "fulfillmentText": "Great! Please enter your NIC number"
     }));
   }
   else if (req.body.queryResult.action == "input.RegisterStep1") {
