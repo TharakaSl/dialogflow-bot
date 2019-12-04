@@ -214,10 +214,13 @@ router.post('/', (req, res) => {
       }));
     }
     else {
-      
 
-      app.intent('Welcome', AskPhoneNumber)
-
+      const response = {
+        followupEvent: {
+            name: "call_from_webhook"
+        }
+      }
+      return res.status(200).send(response);
     }
   }
   else if(req.body.queryResult.action == "input.getPhoneNumber"){
