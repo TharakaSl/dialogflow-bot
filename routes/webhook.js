@@ -234,6 +234,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Please enter your date of birth"
     }));
   }
+  else if(req.body.queryResult.action == "input.getDOB"){
+    var messageData = require('../Payload/healthCondition.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "niyamay"
+    }));
+  }
   else if (req.body.queryResult.action == "input.RegisterStep1") {
     var phoneNum = req.body.queryResult.parameters['phone-number'];
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
