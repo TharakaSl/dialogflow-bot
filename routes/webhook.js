@@ -220,7 +220,7 @@ router.post('/', (req, res) => {
             name: "call_from_webhook"
         }
       }
-      return res.status(200).send(response);
+      return res.send(response);
     }
   }
   else if(req.body.queryResult.action == "input.getPhoneNumber"){
