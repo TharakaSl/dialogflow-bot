@@ -227,6 +227,13 @@ router.post('/', (req, res) => {
       "fulfillmentText": "Great! Please enter your NIC number"
     }));
   }
+  else if(req.body.queryResult.action == "input.getNIC"){
+    var messageData = require('../Payload/healthCondition.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Thanks"
+    }));
+  }
   else if (req.body.queryResult.action == "input.RegisterStep1") {
     var phoneNum = req.body.queryResult.parameters['phone-number'];
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
