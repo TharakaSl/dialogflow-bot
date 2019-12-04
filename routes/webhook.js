@@ -86,15 +86,15 @@ router.post('/', (req, res) => {
         }
         else {
           var fullTemplate = require('../Payload/activateFull.json');
-          var scratchCard = require('../Payload/scratchCard.json');
-          var buyNow = require('../Payload/buyNow.json');
-          var findRetailer = require('../Payload/findRetailer.json');
-          var learnMore = require('../Payload/learnMore.json');
+          // var scratchCard = require('../Payload/scratchCard.json');
+          // var buyNow = require('../Payload/buyNow.json');
+          // var findRetailer = require('../Payload/findRetailer.json');
+          // var learnMore = require('../Payload/learnMore.json');
 
-          fullTemplate.facebook.attachment.payload.elements.push(scratchCard);
-          fullTemplate.facebook.attachment.payload.elements.push(buyNow);
-          fullTemplate.facebook.attachment.payload.elements.push(findRetailer);
-          fullTemplate.facebook.attachment.payload.elements.push(learnMore);
+          // fullTemplate.facebook.attachment.payload.elements.push(scratchCard);
+          // fullTemplate.facebook.attachment.payload.elements.push(buyNow);
+          // fullTemplate.facebook.attachment.payload.elements.push(findRetailer);
+          // fullTemplate.facebook.attachment.payload.elements.push(learnMore);
 
           var output = `Hi ` + welComeMsg + ' ' + response.data.first_name + ', I see that you are not a registered member yet. Would you like me to help you become a member?';
           res.setHeader('Content-Type', 'application/json');

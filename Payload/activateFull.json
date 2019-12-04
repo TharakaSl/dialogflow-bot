@@ -5,7 +5,50 @@
         "payload": {
           "template_type": "generic",
           "elements": [
-            
+            {
+              "title": "Scratch Card",
+              "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Activate",
+                  "payload": "card_activate"
+                }
+              ]
+            },
+            {
+              "title": "Buy now",
+              "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Buy now",
+                  "payload": "check_buy_now"
+                }
+              ]
+            },
+            {
+              "title": "Find retailer",
+              "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Find retailer",
+                  "payload": "find_retailer"
+                }
+              ]
+            },
+            {
+              "title": "Learn more",
+              "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/health_info_pnipam.jpg",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Learn more",
+                  "payload": "learn_more"
+                }
+              ]
+            }
           ]
         }
       }
