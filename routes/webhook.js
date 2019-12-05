@@ -251,7 +251,7 @@ router.post('/', (req, res) => {
         var config = require('../Payload/profileInfo.json');
         config.facebook.attachment.payload.elements[0].image_url = response.data.profile_pic;
         config.facebook.attachment.payload.elements[0].subtitle = 'Name: ' + response.data.first_name + ' ' + response.data.last_name
-          + '\n' + 'Gender: ' + response.data.gender + '\n' + 'Bday: ' + bday
+          + '\n' + 'Gender: ' + response.data.gender + '\n' + 'Bday: ' + formatDate(bday)
           + '\n' + 'num: ' + num;
         let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.`;
         res.setHeader('Content-Type', 'application/json');
@@ -351,5 +351,19 @@ const renderWelcomeMsg = (m) => {
   return g;
 }
 
+const formatDate = (date) => {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+
+}
 
 module.exports = router;
