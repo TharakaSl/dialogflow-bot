@@ -12,7 +12,7 @@
                           {
                             "type": "postback",
                             "title": "Talk to a doctor now",
-                            "payload": "doctor_now"
+                            "payload": "doctorCallNow"
                           },
                           {
                             "type": "postback",
