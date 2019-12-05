@@ -374,8 +374,6 @@ router.post('/', (req, res) => {
       ]
     }));
   }
-  else if (req.body.queryResult.action == "input.gg") {
-  }
 });
 
 const renderWelcomeMsg = (m) => {
