@@ -331,11 +331,37 @@ router.post('/', (req, res) => {
       ]
     }));
   }
-  else if (req.body.queryResult.action == "input.talkToDoctorNow") {
+  else if (req.body.queryResult.action == "input.callToDoctor") {
     var messageData = require('../Payload/remoteConsultation.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "Hello"
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "text": {
+            "text": [
+              "We're happy to help get you connected with a doctor shortly",
+              "Is the issue urgent?"
+            ]
+          }
+        },
+        {
+          "quickReplies": {
+            "quickReplies": [
+              {
+                "content_type":"text",
+                "title":"Yes, it is urgent",
+                "payload":"<DEVELOPER_DEFINED_PAYLOAD>"
+              },
+              {
+                "content_type":"text",
+                "title":"I can wait a few minutes",
+                "payload":"<DEVELOPER_DEFINED_PAYLOAD>"
+              }
+            ]
+          }
+        }
+      ]
     }));
   }
 });
