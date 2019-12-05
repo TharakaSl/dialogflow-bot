@@ -204,9 +204,9 @@ router.post('/', (req, res) => {
   }
   else if (req.body.queryResult.action == "input.getSixteenDigitNumber") {
 
-    var phoneNum = req.body.queryResult.parameters['sixteendigitnumber'];
+    var scratchNum = req.body.queryResult.parameters['scratch-number'];
 
-    if (! /^[0-9]{16}$/.test(phoneNum)) {
+    if (! /^[0-9]{16}$/.test(scratchNum)) {
       var messageData = require('../Payload/healthCondition.json');
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify({
