@@ -9,11 +9,6 @@
                         "title": "Profile Information",
                         "image_url": "",
                         "subtitle": "",
-                        "default_action": {
-                            "type": "web_url",
-                            "url": "https://onecommonhealth.com/",
-                            "webview_height_ratio": "tall"
-                        },
                         "buttons": [
                             {
                                 "type": "postback",

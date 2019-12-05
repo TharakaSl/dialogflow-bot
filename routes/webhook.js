@@ -253,7 +253,7 @@ router.post('/', (req, res) => {
         config.facebook.attachment.payload.elements[0].image_url = response.data.profile_pic;
         config.facebook.attachment.payload.elements[0].subtitle = 'Name: ' + response.data.first_name + ' ' + response.data.last_name
           + '\n' + 'Gender: ' + response.data.gender + '\n' + 'Bday: ' + formatDate(bday)
-          + '\n' + 'Mo Num: ' + num
+          + '\n' + 'Mobile: ' + num
           + '\n' + 'NIC: ' + nic;
         let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.`;
         res.setHeader('Content-Type', 'application/json');
