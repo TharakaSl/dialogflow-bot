@@ -334,14 +334,31 @@ router.post('/', (req, res) => {
   else if (req.body.queryResult.action == "input.callToDoctor") {
     var messageData = require('../Payload/remoteConsultation.json');
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-      "fulfillmentText": "Hello",
-      "fulfillmentMessages": [
-        {
-          "payload": messageData
-        }
-      ]
-    }));
+    res.send(JSON.stringify(
+      {
+        "fulfillmentMessages": [
+          {
+            "text": {
+              "text": [
+                "Greetings from Tulsi Village!!!",
+                "My name is Appu. I am your virtual assistant.",
+                "How can I help you?"
+              ]
+            }
+          },
+          {
+            "quickReplies": {
+              "quickReplies": [
+                "Book",
+                "Rooms",
+                "Contact",
+                "Other"
+              ]
+            }
+          }
+        ]
+      }
+    ));
   }
 });
 
