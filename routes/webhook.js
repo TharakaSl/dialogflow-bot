@@ -350,12 +350,12 @@ router.post('/', (req, res) => {
               {
                 "content_type":"text",
                 "title":"Yes, it is urgent",
-                "payload":"<DEVELOPER_DEFINED_PAYLOAD>"
+                "payload":"isUrgent"
               },
               {
                 "content_type":"text",
                 "title":"I can wait a few minutes",
-                "payload":"<DEVELOPER_DEFINED_PAYLOAD>"
+                "payload":"isNotUrgent"
               }
             ]
           }
