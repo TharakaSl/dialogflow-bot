@@ -336,32 +336,6 @@ router.post('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
       "fulfillmentText": "Hello",
-      "fulfillmentMessages": [
-        {
-          "text": {
-            "text": [
-              "We're happy to help get you connected with a doctor shortly",
-              "Is the issue urgent?"
-            ]
-          }
-        },
-        {
-          "quickReplies": {
-            "quickReplies": [
-              {
-                "content_type":"text",
-                "title":"Yes, it is urgent",
-                "payload":"Urgent_Call"
-              },
-              {
-                "content_type":"text",
-                "title":"I can wait a few minutes",
-                "payload":"Can_Wait"
-              }
-            ]
-          }
-        }
-      ]
     }));
   }
 });
