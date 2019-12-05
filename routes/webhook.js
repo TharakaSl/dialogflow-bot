@@ -242,6 +242,7 @@ router.post('/', (req, res) => {
     // }));
 
     var num = req.body.queryResult.outputContexts[0].parameters['phone-number'];
+    var nic = req.body.queryResult.outputContexts[0].parameters['nic-no'];
 
     var bday = req.body.queryResult.parameters['bday'];
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
@@ -252,7 +253,8 @@ router.post('/', (req, res) => {
         config.facebook.attachment.payload.elements[0].image_url = response.data.profile_pic;
         config.facebook.attachment.payload.elements[0].subtitle = 'Name: ' + response.data.first_name + ' ' + response.data.last_name
           + '\n' + 'Gender: ' + response.data.gender + '\n' + 'Bday: ' + formatDate(bday)
-          + '\n' + 'num: ' + num;
+          + '\n' + 'Mobile Number: ' + num
+          + '\n' + 'NIC: ' + nic;
         let output = `Ok. I have pulled the following info from your facebook account. Please verify before proceeding.`;
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({
