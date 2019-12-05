@@ -355,6 +355,12 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.urgentCall") {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "One of our partner doctors will initiate a call shortly.  If this is an emergency, please go to the nearest hospital."
+    }));
+  }
 });
 
 const renderWelcomeMsg = (m) => {
