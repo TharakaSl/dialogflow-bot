@@ -241,7 +241,7 @@ router.post('/', (req, res) => {
     //   "fulfillmentText": "niyamay"
     // }));
 
-    var num = req.body.queryResult.outputContexts[0].parameters['phone-number'].value;
+    var num = req.body.queryResult.outputContexts[0].parameters['phone-number'];
 
     var bday = req.body.queryResult.parameters['bday'];
     var profileId = req.body.originalDetectIntentRequest.payload.data.sender.id;
