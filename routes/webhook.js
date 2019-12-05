@@ -331,6 +331,12 @@ router.post('/', (req, res) => {
       ]
     }));
   }
+  else if (req.body.queryResult.action == "input.callToDoctor") {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      "fulfillmentText": "Hello there"
+    }));
+  }
 });
 
 const renderWelcomeMsg = (m) => {
