@@ -335,7 +335,7 @@ router.post('/', (req, res) => {
     var messageData = require('../Payload/remoteConsultation.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "Hello tt"
+      "fulfillmentText": "We're happy to help get you connected with a doctor shortly"
     }));
   }
 });
