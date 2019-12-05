@@ -343,22 +343,6 @@ router.post('/', (req, res) => {
               "Is the issue urgent?"
             ]
           }
-        },
-        {
-          "quickReplies": {
-            "quickReplies": [
-              {
-                "content_type":"text",
-                "title":"Yes, it is urgent",
-                "payload":"isUrgent"
-              },
-              {
-                "content_type":"text",
-                "title":"I can wait a few minutes",
-                "payload":"isNotUrgent"
-              }
-            ]
-          }
         }
       ]
     }));
