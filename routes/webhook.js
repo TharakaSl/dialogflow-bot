@@ -366,9 +366,6 @@ router.post('/', (req, res) => {
     res.send(JSON.stringify({
       "fulfillmentText": "Thank you for your patience. One of our doctors will initiate a call within 30 minutes."
     }));
-    res.send(JSON.stringify({
-      "fulfillmentText": "Thutes."
-    }));
   }
 });
 
