@@ -332,9 +332,15 @@ router.post('/', (req, res) => {
     }));
   }
   else if (req.body.queryResult.action == "input.callToDoctor") {
+    var messageData = require('../Payload/remoteConsultation.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "Hello there"
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "payload": messageData
+        }
+      ]
     }));
   }
 });
