@@ -358,13 +358,16 @@ router.post('/', (req, res) => {
   else if (req.body.queryResult.action == "input.urgentCall") {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "One of our partner doctors will initiate a call shortly.  If this is an emergency, please go to the nearest hospital."
+      "fulfillmentText": "One of our partner doctors will initiate a call shortly. If this is an emergency, please go to the nearest hospital."
     }));
   }
   else if (req.body.queryResult.action == "input.noturgent") {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "Thank you for your patience.  One of our doctors will initiate a call within 30 minutes."
+      "fulfillmentText": "Thank you for your patience. One of our doctors will initiate a call within 30 minutes."
+    }));
+    res.send(JSON.stringify({
+      "fulfillmentText": "Thutes."
     }));
   }
 });
