@@ -347,16 +347,8 @@ router.post('/', (req, res) => {
         {
           "quickReplies": {
             "quickReplies": [
-              {
-                "content_type":"text",
-                "title":"Yes, it is urgent",
-                "payload":"Urgent_Call"
-              },
-              {
-                "content_type":"text",
-                "title":"I can wait a few minutes",
-                "payload":"Can_Wait"
-              }
+              "Yes, it is urgent",
+              "I can wait a few minutes"
             ]
           }
         }
