@@ -33,7 +33,7 @@
               {
                 "type": "postback",
                 "title": "Talk to a doctor now",
-                "payload": "talk_to_doctor"
+                "payload": "doctor_call_now"
               },
               {
                 "type": "postback",
