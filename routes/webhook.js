@@ -335,7 +335,25 @@ router.post('/', (req, res) => {
     var messageData = require('../Payload/remoteConsultation.json');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      "fulfillmentText": "We're happy to help get you connected with a doctor shortly"
+      "fulfillmentText": "Hello",
+      "fulfillmentMessages": [
+        {
+          "text": {
+            "text": [
+              "We're happy to help get you connected with a doctor shortly",
+              "Is the issue urgent?"
+            ]
+          }
+        },
+        {
+          "quickReplies": {
+            "quickReplies": [
+              "Yes, it is urgent",
+              "I can wait a few minutes"
+            ]
+          }
+        }
+      ]
     }));
   }
 });
