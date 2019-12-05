@@ -6,27 +6,26 @@
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "Remote Consultation",
+                        "title": "Reach a doctor",
                         "image_url": "https://res.cloudinary.com/dqifo1hcc/image/upload/v1575348840/primary_dlhiid.jpg",
-                        "subtitle": "Here are the remote consultation options I can help you with",
-                        "default_action": {
-                            "type": "web_url",
-                            "url": "https://onecommonhealth.com/",
-                            "webview_height_ratio": "tall"
-                        },
                         "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Speak To Doctor Now",
-                                "payload": "speakToDoctorNow"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Book Consult Later",
-                                "payload": "bookConsultLater"
-                            }
+                          {
+                            "type": "postback",
+                            "title": "Talk to a doctor now",
+                            "payload": "talk_to_doctor"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Schedule a callback",
+                            "payload": "schedule_cal_back"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Specialist appointment",
+                            "payload": "specialist_appointment"
+                          }
                         ]
-                    }
+                      }
                 ]
             }
         }
